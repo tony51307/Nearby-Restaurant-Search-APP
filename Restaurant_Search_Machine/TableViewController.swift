@@ -78,7 +78,7 @@ class TableViewController: UITableViewController , CLLocationManagerDelegate,MKM
                 
                 if p["photos"]! != nil{
                     newshop.photo = (p["photos"] as! [AnyObject])[0]["photo_reference"] as? String ?? ""
-                    let url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=120&photoreference="+newshop.photo+"&key=AIzaSyCnFSAheEhXIrj2QrRuFHtM54gAWgRDlR0"
+                    let url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=120&photoreference="+newshop.photo+"&key=" //enter the key for Google Map API
                     newshop.image = setImage(from: url)
 
                 }else{
@@ -166,7 +166,7 @@ class TableViewController: UITableViewController , CLLocationManagerDelegate,MKM
         LuckyDrawBtn.isEnabled = false
         filterBtn.isEnabled = false
         
-        let url = NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?language=zh-TW&location="+String(currentLocation.coordinate.latitude)+","+String(currentLocation.coordinate.longitude)+"&radius="+String(search_distance)+"&type=restaurant&key=%20AIzaSyCnFSAheEhXIrj2QrRuFHtM54gAWgRDlR0")
+        let url = NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?language=zh-TW&location="+String(currentLocation.coordinate.latitude)+","+String(currentLocation.coordinate.longitude)+"&radius="+String(search_distance)+"&type=restaurant&key=")//enter the key for Google Map API
         
         let sessionWithConfigure = URLSessionConfiguration.default
         
