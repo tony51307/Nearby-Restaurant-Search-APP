@@ -186,7 +186,7 @@ class ContentViewController: UIViewController,URLSessionDelegate, URLSessionDown
     
     @objc func loadData(){
            processTag = 1
-           let url = NSURL(string: "https://maps.googleapis.com/maps/api/place/details/json?language=zh-TW&place_id="+id+"&key=AIzaSyCnFSAheEhXIrj2QrRuFHtM54gAWgRDlR0")
+           let url = NSURL(string: "https://maps.googleapis.com/maps/api/place/details/json?language=zh-TW&place_id="+id+"&key=") //enter the key for Google Map API
            
            let sessionWithConfigure = URLSessionConfiguration.default
            
@@ -234,7 +234,7 @@ class ContentViewController: UIViewController,URLSessionDelegate, URLSessionDown
                     }
                 if (jsonResult["result"] as! AnyObject)["photos"]! != nil{
                     for p in (jsonResult["result"] as! AnyObject)["photos"] as! [AnyObject]{
-                        let url =  "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference="+(p["photo_reference"] as! String)+"&key=AIzaSyCnFSAheEhXIrj2QrRuFHtM54gAWgRDlR0"
+                        let url =  "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference="+(p["photo_reference"] as! String)+"&key="//enter the key for Google Map API
                         let imageURL = URL(string: url)!
                         let imageData = try Data(contentsOf: imageURL)
                         let image = UIImage(data: imageData)
